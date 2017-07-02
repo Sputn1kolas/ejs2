@@ -23,15 +23,22 @@
     <div class="container">
         <%- include('partials/navbar') %>
         <div class="jumbotron">
-            <h1>All about Node</h1>
-            <p class="lead">Check out our articles below!</p>
+            <h1>A Few Sends</h1>
+            <p class="lead">Check out them below!</p>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
                 <div class="list-group">
                   <!-- loop over blog posts and render them -->
-                  LIST_OF_POSTS
+                  <% climbs.forEach((climb) => { %>
+                    <a href="/climb/<%= climb.id %>",class="list-group-item">
+                      <h4 class="list-group-item-heading"><%= climb.name %></h4>
+                      <p class="list-group-item-text">Difficulty: <%= climb.grade %></p>
+                      <p class="list-group-item-text">Rating: <%= climb.rating %> </p>
+                      <br>
+                    </a>
+                    <% }) %>
                 </div>
             </div>
         </div>

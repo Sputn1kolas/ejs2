@@ -1,9 +1,19 @@
 <!-- views/partials/navbar.ejs -->
 <div class="header clearfix">
   <nav>
-    <ul class="nav-pills pull-right">
+    <ul class="nav-tabs pull-right">
       <li role="presentation"><a href="/">Home</></li>
+      <li "navbar-drop"> Climbs
+        <ul class="navbar-drop">
+        <% climbs.forEach((climb) => { %>
+          <li><a href="/climb/<%= climb.id %>"><%= climb.name %></a></li>
+        <% }) %>
+        </ul>
+      </li>
     </ul>
-    <h3 class="text-muted">Node.js Blog</h3>
+    <h3 class="text-muted">BETA</h3>
   </nav>
 </div>
+
+
+
